@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import classNames from 'classnames';
 import './styles.scss'
 import Header from './Header'
@@ -6,8 +6,6 @@ import Show from './Show'
 import Empty from './Empty'
 
 const Appointment = (props) => {
-
- 
 
   return (
     <article className="appointment" >
