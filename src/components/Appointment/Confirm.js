@@ -1,6 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-import "./Confirm.scss";
 import Button from "../Button"
 
 const Confirm = (props) => {

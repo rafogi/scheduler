@@ -1,6 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-import "./Error.scss";
 
 
 const Error = (props) => {
