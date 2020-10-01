@@ -4,7 +4,8 @@ import DayList from './DayList'
 import React, { useState, useEffect } from "react";
 import Appointment from 'components/Appointment/index'
 import axios from 'axios'
-import getAppointmentsForDay from "helpers/selectors"
+import {getAppointmentsForDay,getInterview} from "helpers/selectors"
+
 
 import "components/Application.scss";
 
@@ -12,8 +13,7 @@ import "components/Application.scss";
 
 export default function Application(props) {
 
-  // const [day, setDay] = useState(["Monday"]);
-  // const [days, setDays] = useState([]);
+
 
   const [state, setState] = useState({
     day: "Monday",
@@ -43,9 +43,7 @@ export default function Application(props) {
       setState(prev => ({...prev, days: all[0].data, appointments: all[1].data}))
 
     })
-    // axios.get(daysURL).then(response => {
-    //   setDays([...response.data])
-    // });
+
   }, [])
 
 

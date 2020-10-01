@@ -1,4 +1,4 @@
-export default function getAppointmentsForDay(state, day) {
+export function getAppointmentsForDay(state, day) {
   if (!state.days.length){
     return [];
   }
@@ -18,7 +18,7 @@ export default function getAppointmentsForDay(state, day) {
     return filteredDays;
 }
 
-export default function getInterview(state, interview) {
+export function getInterview(state, interview) {
   //console.log('state', state)
   if (!interview){
     return null
@@ -37,6 +37,10 @@ export default function getInterview(state, interview) {
     }
   }
   return newOb;
+}
+
+function getInterviewersForDay () {
+  
 }
 
 

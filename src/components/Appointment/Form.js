@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import classnames from 'classnames';
-import "./Confirm.scss";
 import InterviewerList from "../InterviewerList"
 import Button from "../Button"
 
