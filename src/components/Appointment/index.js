@@ -4,7 +4,7 @@ import './styles.scss'
 import Header from './Header'
 import Show from './Show'
 import Empty from './Empty'
-//import { getInterview } from "helpers/selectors"
+
 import Form from './Form'
 
 const EMPTY = "EMPTY";
@@ -18,11 +18,19 @@ const Appointment = (props) => {
   const {mode,transition, back} = useVisualMode(
     (props.interview) ? SHOW : EMPTY
   )
+
+  function save(name, interviewer) {
+    const interview = {
+      student: name,
+      interviewer
+    };
+    props.bookInterview(props.id,interview)
+  }
   
   return (
     <article className="appointment" >
       <Header className="appointment:last-of-type" id={props.id} time={props.time} />
-      {mode === CREATE && <Form interviewers={[]} onCancel={() => back()}/>}
+      {mode === CREATE && <Form interviewers={props.interviewers} onCancel={() => back()}  onSave={save}/>}
       {mode === EMPTY && <Empty onAdd={() =>transition(CREATE)} /> }
 
       {mode === SHOW && (
@@ -32,8 +40,6 @@ const Appointment = (props) => {
         />
       )
       }
-    
-      {/* {(props.interview) ? <Show student={props.interview.student} interviewer={props.interview.interviewer}/> : <Empty/>} */}
     </article>
   );
 };
