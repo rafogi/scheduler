@@ -36,6 +36,7 @@ export function getInterview(state, interview) {
       newOb.interviewer=intervObj[inter];
     }
   }
+  console.log(newOb)
   return newOb;
 }
 
