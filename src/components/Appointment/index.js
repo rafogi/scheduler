@@ -26,9 +26,6 @@ const Appointment = (props) => {
     (props.interview) ? SHOW : EMPTY
   )
 
-  function edit() {
-
-  }
 
   function save(name, interviewer) {
     
