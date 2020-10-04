@@ -44,6 +44,9 @@ export default function useApplicationData() {
   }, [])
 
   const bookInterview = function(id, interview) {
+    if(state.appointments[id].interview === null) {
+      changeSpots(state.days, state.day, "minus");
+    }
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -54,7 +57,7 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
-    changeSpots(state.days, state.day, "minus");
+    
 
     return axios.put(`/api/appointments/${id}`, appointment)
       .then(() => (setState({ ...state, appointments })))
