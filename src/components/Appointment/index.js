@@ -47,7 +47,7 @@ const Appointment = (props) => {
   }
 
   return (
-    <article className="appointment" >
+    <article className="appointment" data-testid="appointment">
       <Header className="appointment:last-of-type" id={props.id} time={props.time} />
       {mode === CREATE && <Form
         interviewers={props.interviewers}
@@ -57,7 +57,7 @@ const Appointment = (props) => {
       {mode === SAVING && <Status message={SAVING} />}
       {mode === DELETING && <Status message={DELETING} />}
       {mode === CONFIRM && <Confirm onCancel={back} onConfirm={() => deleting()} message="are you sure you want to delete?" />}
-      {mode === ERROR_DELETE && <Error message="Error Deleting your appointment" onClose={back}/>}
+      {mode === ERROR_DELETE && <Error message="abcd" onClose={back}/>}
       {mode === ERROR_SAVE && <Error message="Error Saving your appointment" onClose={back}/>}
       {mode === EDIT && <Form
         name={props.interview.student}
