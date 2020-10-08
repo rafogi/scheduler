@@ -2,7 +2,7 @@ import  {  useEffect, useReducer } from "react";
 import axios from 'axios';
 
 export default function useApplicationData() {
-
+//declare initial state for reducer
   const initialState = {
     day: "Monday",
     days: [],
@@ -10,7 +10,7 @@ export default function useApplicationData() {
     interviewers: {}
   };
 
-  
+  //get the count for spots remaining for current day selected
   const changeSpots = (day, appointments) => {
 
     let count = 0;
@@ -22,7 +22,7 @@ export default function useApplicationData() {
     }
     return count
   };
-
+//update the spots for all days in appointments
   const addSpotsToDays   = (days, appointments) => {
     const updatedDays = days.map(day => ({
       ...day,
@@ -31,13 +31,13 @@ export default function useApplicationData() {
      return updatedDays
   }
 
-
+//declare action type variables
   const SET_DAY = "SET_DAY";
   const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";
   const SET_INTERVIEW = "SET_INTERVIEW";
 
   const [state, dispatch] = useReducer(reducer, initialState);
-
+//reducer function to change the day application data and appointments
   function reducer(state, action) {
     switch (action.type) {
       case SET_DAY:
@@ -73,7 +73,7 @@ export default function useApplicationData() {
         );
     }
   }
-
+//grab data from api/db
   useEffect(() => {
     const daysURL = `/api/days`;
     const appointmentsURL = '/api/appointments'
@@ -93,16 +93,13 @@ export default function useApplicationData() {
       });
     });
   }, []);
-
+//function for booking/edit interview
   const bookInterview = function (id, interview) {
-
     return axios.put(`/api/appointments/${id}`, {interview})
       .then(() => ( dispatch({ type: SET_INTERVIEW, id, interview: interview})))
   }
-
+//function for removing an interview booked
   const cancelInterview = function (id) {
-
-
     return axios.delete(`/api/appointments/${id}`)
       .then(() => ( dispatch({ type: SET_INTERVIEW, id, interview: null})))
   }

@@ -27,3 +27,6 @@ npm run storybook
 
 !["Screenshot of Scheduler page"](https://github.com/rafogi/scheduler/blob/master/public/images/Scheduler.png)
 
+## Netlify link of project
+
+https://keen-darwin-05abe4.netlify.app/
