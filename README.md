@@ -25,5 +25,5 @@ npm run storybook
 ```
 ## Screenshots
 
-!["Screenshot of Scheduler page"](https://github.com/rafogi/scheduler/blob/master/public/images/scheduler.png)
+!["Screenshot of Scheduler page"](https://github.com/rafogi/scheduler/blob/master/public/images/Scheduler.png)
 
