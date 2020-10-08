@@ -13,11 +13,11 @@ import Form from './Form'
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CONFIRM = "Confirm";
-const ERROR = "Error";
+// const ERROR = "Error";
 const SAVING = "Saving";
 const CREATE = "Form";
 const DELETING = "Deleting"
-const Confrim = "CONFIRM";
+// const Confrim = "CONFIRM";
 const EDIT = "EDIT";
 const ERROR_DELETE = "ERROR_DELETE";
 const ERROR_SAVE = "ERROR_SAVE";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import  {  useEffect, useReducer } from "react";
 import axios from 'axios';
 
 export default function useApplicationData() {
@@ -25,7 +25,7 @@ export default function useApplicationData() {
 
   const addSpotsToDays   = (days, appointments) => {
     const updatedDays = days.map(day => ({
-      ... day, 
+      ...day,
       spots: changeSpots(day, appointments)
      }))
      return updatedDays
