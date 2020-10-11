@@ -28,14 +28,6 @@ npm run storybook
 !["Screenshot of Scheduler page"](https://github.com/rafogi/scheduler/blob/master/public/images/Scheduler.png)
 
 
-## Project database deployed to heroku
-click to view json of appointments
-https://schedulerlhlapi.herokuapp.com/api/appointments
-
-## Netlify link of project
-
-**make sure to click heroku link first
-https://keen-darwin-05abe4.netlify.app/
 
 ## Booking an interview
 
